@@ -1,7 +1,7 @@
 # business_rules.py
 # Author: Darian Peters
 
-APPROVAL_LIMIT = 1000
+APPROVAL_LIMIT = 1000  # module level constraint
 
 
 def calculate_total(price: float, quantity: int) -> float:
