@@ -27,8 +27,11 @@ def test_tier_auto():
     assert get_approval_tier(400) == "auto"
 
 
-def test_tier_boundary_500():
+def test_tier_boundary():
     assert get_approval_tier(500) == "auto"  # exactly at limit
+    assert get_approval_tier(501) == "manager"  # just over limit
+    assert get_approval_tier(2000) == "manager"  # exactly at limit
+    assert get_approval_tier(2001) == "director"  # just over limit
 
 
 def test_tier_manager():
